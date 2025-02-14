@@ -4,13 +4,12 @@ import {
     Routes,
     Route,
 } from "react-router-dom";
-import Navbar from "./Components/NavbarComponent";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import PageContainerBasic from './Components/PageContainerDefault';
 
 function App() {
   return (
     <Router>
-      <Navbar />
+      <PageContainerBasic />
     </Router>
   );
 }
