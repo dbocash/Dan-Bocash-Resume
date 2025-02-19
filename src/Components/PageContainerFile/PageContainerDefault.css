@@ -1,0 +1,11 @@
+.face-image {
+    width:20%;
+    height:auto;
+    border-radius:40%;
+    object-fit: cover;
+    padding-top: 20px;
+}
+
+.face-wrapper {
+    padding: 20px;
+}

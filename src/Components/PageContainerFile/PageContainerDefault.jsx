@@ -6,14 +6,10 @@ import {
   PageHeader,
   PageHeaderToolbar,
 } from '@toolpad/core/PageContainer';
-import { Image } from 'react-bootstrap';
 import Grid from '@mui/material/Grid2';
-import Paper from '@mui/material/Paper';
-import Stack from '@mui/material/Stack';
-import Button from '@mui/material/Button';
-import PrintIcon from '@mui/icons-material/Print';
-import DownloadIcon from '@mui/icons-material/Download';
-
+import {Paper, Typography} from '@mui/material';
+import Face from '../../util/Images/face.jpg'
+import './PageContainerDefault.css';
 
 function useDemoRouter(initialPath) {
   const [pathname, setPathname] = React.useState(initialPath);
@@ -36,35 +32,6 @@ const Skeleton = styled('div')(({ theme, height }) => ({
   content: '" "',
 }));
 
-function CustomPageToolbar() {
-  return (
-    <PageHeaderToolbar>
-      <Stack direction="row" spacing={1} alignItems="center">
-        <Button
-          variant="outlined"
-          size="small"
-          color="neutral"
-          startIcon={<DownloadIcon fontSize="inherit" />}
-        >
-          Download
-        </Button>
-        <Button
-          variant="outlined"
-          size="small"
-          color="neutral"
-          startIcon={<PrintIcon fontSize="inherit" />}
-        >
-          Print
-        </Button>
-      </Stack>
-    </PageHeaderToolbar>
-  );
-}
-
-function CustomPageHeader() {
-  return <PageHeader slots={{ toolbar: CustomPageToolbar }} />;
-}
-
 export default function PageContainerBasic(props) {
   const { window } = props;
   const router = useDemoRouter('/home');
@@ -78,18 +45,28 @@ export default function PageContainerBasic(props) {
       <Paper sx={{ p: 2, width: '100%' }}>
         <PageContainer>
           <Grid container spacing={1}>
-            <Grid size={5} />
             <Grid size={12}>
-            </Grid>
-            <Grid size={12}>
-                <Image source={"/Home"} />
+              <Paper sx={{p: 2, width: '100%'}}>
+                  <Grid item xs={12} sm={8} className="face-wrapper">
+                    <img
+                      src={Face}
+                      alt='Daniel Bocash'
+                      className='face-image'
+                    />
+                    <Paper elevation={3} sx={{width: '50%', marginLeft: "auto", display: "flex", alignItems: "center"}}>
+                      <Typography>
+                        This is hello world
+                      </Typography>
+                    </Paper>
+                  </Grid>
+              </Paper>
             </Grid>
             <Grid size={4}>
               <Skeleton height={100} />
             </Grid>
             <Grid size={8}>
                 <Paper>
-                    Title
+                    About Me
                 </Paper>
                 <Paper 
                 square={false}

@@ -18,55 +18,49 @@ function ResponsiveAppBar() {
     };
 
     return (
-        <AppBar position="static">
-        <Container maxWidth="xl">
-            <Toolbar disableGutters>
-            <CottageRoundedIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
-            <Typography
-                variant="h6"
-                noWrap
-                component="a"
-                href="#app-bar-with-responsive-menu"
-                sx={{
-                mr: 2,
-                display: { xs: "none", md: "flex" },
-                fontFamily: "monospace",
-                fontWeight: 700,
-                letterSpacing: ".3rem",
-                color: "inherit",
-                textDecoration: "none",
-                }}
-            >
-            </Typography>
-            <Typography
-                variant="h5"
-                noWrap
-                component="a"
-                href="#app-bar-with-responsive-menu"
-                sx={{
-                mr: 2,
-                display: { xs: "flex", md: "none" },
-                flexGrow: 1,
-                fontFamily: "monospace",
-                fontWeight: 700,
-                letterSpacing: ".3rem",
-                color: "inherit",
-                textDecoration: "none",
-                }}
-            >
-            </Typography>
-            <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-                {pages.map((page) => (
-                <Button
-                    key={page}
-                    onClick={handleCloseNavMenu}
-                    sx={{ my: 2, color: "white", display: "block" }} >
-                    {page}
-                </Button>
-                ))}
-            </Box>
-            </Toolbar>
-        </Container>
+        <AppBar>
+            <Container maxWidth="xl" sx={{backgroundColor: "#4a4a4a"}}>
+                <Toolbar sx={{backgroundColor: "#FAEBD7", color: "#4a4a4a"}}>
+                    <CottageRoundedIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
+                    <Typography
+                        variant="h6"
+                        noWrap
+                        component="a"
+                        href="#app-bar-with-responsive-menu"
+                        sx={{
+                        mr: 2,
+                        display: { xs: "none", md: "flex" },
+                        fontFamily: "monospace",
+                        fontWeight: 700,
+                        letterSpacing: ".3rem",
+                        color: "inherit",
+                        textDecoration: "none",
+                        }}
+                    >
+                    </Typography>
+                    <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
+                        {pages.map((page) => (
+                        <Button
+                            key={page}
+                            sx={{ my: 2, 
+                            color: "#4a4a4a", 
+                            fontWeight:"bold",
+                            display: "block"
+                            }} >
+                            {page}
+                        </Button>
+                        ))}
+                    </Box>
+                    <Box sx={{textAlign: "right",
+                        padding: 2,
+                        fontWeight: "bold",
+                        display: "block",
+                        variant: "contained",
+                        width: "fit-content",}}>
+                        Daniel Bocash / Senior Software Developer
+                    </Box>
+                </Toolbar>
+            </Container>
         </AppBar>
     );
 }
