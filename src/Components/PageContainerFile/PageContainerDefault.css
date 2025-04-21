@@ -1,11 +1,47 @@
 .face-image {
+    float: left;
     width:20%;
     height:auto;
     border-radius:40%;
     object-fit: cover;
     padding-top: 20px;
+    display: flex;
+}
+
+.title-paper {
+    float: right;
+    justify-content: center;
+    text-align: center;
+    padding: 10px;
+    margin-left: auto;
+    margin-right: 15%;
+    margin-top: 40px;
+}
+
+.introduction-paper {
+    float: right;
+    width: 75%;
+    height: auto;
+    object-fit: cover;
+    align-items: left;
+    margin-left: auto;
+    margin-top: 20px;
+    justify-content: left;
 }
 
 .face-wrapper {
+    background-color: #EDEAE0;
+    height: 275px;
     padding: 20px;
+}
+
+.about-paper{
+    width: 100%;
+    text-align: center;
+}
+
+.about-desc-paper {
+    width: 100%;
+    text-align: center;
+    margin-top: 2%;
 }
